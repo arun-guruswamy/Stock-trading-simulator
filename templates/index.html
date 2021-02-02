@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in index %}
+                <tr>
+                    <td>{{ i.symbol }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.shares }}</td>
+                    <td>{{ i.price }}</td>
+                    <td>{{ i.total }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+              <th>Balance</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>{{ balance }}</th>
+            </tr>
+            <tr>
+              <th>Grand total</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>{{ grand_total }}</th>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
